@@ -24,12 +24,11 @@ class Conversor(QMainWindow, Ui_MainWindow, QMenu):
         valor_in = self.lineValorIn.text()
         valida = Validador()
         teste = valida.valida(valor_in)
-        box_in = self.boxEntrada.currentText()
-        box_out = self.boxSaida.currentText()
-        calc = Calcula()
-        valor_in = self.lineValorIn.text()
-        
+
         if teste:
+            box_in = self.boxEntrada.currentText()
+            box_out = self.boxSaida.currentText()
+            calc = Calcula()
             tipo = valida.tipo(box_in, box_out)
             resultado = calc.calcular(tipo, valor_in)
             self.lineResultado.setText(resultado)
