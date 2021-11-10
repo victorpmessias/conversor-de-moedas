@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>394</width>
+    <height>160</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QGridLayout" name="gridLayout">
+    <item row="3" column="0" colspan="2">
+     <widget class="QComboBox" name="boxSaida">
+      <item>
+       <property name="text">
+        <string>Escolha o tipo de saida</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>MB</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Mb</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>KB</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Kb</string>
+       </property>
+      </item>
+     </widget>
+    </item>
+    <item row="6" column="1">
+     <widget class="QPushButton" name="btnConvert">
+      <property name="text">
+       <string>Converter</string>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="0" colspan="2">
+     <widget class="QComboBox" name="boxEntrada">
+      <item>
+       <property name="text">
+        <string>Escolha o tipo de entrada</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>MB</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Mb</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>KB</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Kb</string>
+       </property>
+      </item>
+     </widget>
+    </item>
+    <item row="6" column="0">
+     <widget class="QLineEdit" name="lineValorIn">
+      <property name="text">
+       <string/>
+      </property>
+      <property name="placeholderText">
+       <string>Insira um valor</string>
+      </property>
+     </widget>
+    </item>
+    <item row="7" column="0">
+     <widget class="QLineEdit" name="lineResultado">
+      <property name="text">
+       <string/>
+      </property>
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+      <property name="placeholderText">
+       <string>Resultado</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>394</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuTipo_de_dado">
+    <property name="title">
+     <string>Tipo de dado</string>
+    </property>
+    <addaction name="actionDados_de_arm"/>
+    <addaction name="actionMoeda"/>
+    <addaction name="actionMetrico"/>
+   </widget>
+   <addaction name="menuTipo_de_dado"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <action name="actionDados_de_arm">
+   <property name="text">
+    <string>Dados de arm.</string>
+   </property>
+  </action>
+  <action name="actionMoeda">
+   <property name="text">
+    <string>Moeda</string>
+   </property>
+  </action>
+  <action name="actionMetrico">
+   <property name="text">
+    <string>Metrico</string>
+   </property>
+  </action>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

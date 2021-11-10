@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Form</class>
+ <widget class="QWidget" name="Form">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>400</width>
+    <height>300</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <widget class="QComboBox" name="boxEntrada_moedas">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>100</y>
+     <width>376</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <item>
+    <property name="text">
+     <string>Escolha o tipo de entrada</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>R$</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>ER</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>$</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Libras</string>
+    </property>
+   </item>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
