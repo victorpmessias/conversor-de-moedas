@@ -9,7 +9,7 @@ class Validador:
             if valor_out == 'Mb':
                 r += 2
                 return r
-            elif valor_out == 'KB':
+            elif valor_out == 'KB': 
                 r += 3
                 return r 
             elif valor_out == 'Kb':
