@@ -22,35 +22,22 @@ class Conversor(QMainWindow, Ui_MainWindow, QMenu):
         self.convert()
 
     def convert(self):
+        """
+        Quando acianda esta função captura os dados e executa a operação de
+        conversão
+
+        :var entrada, saida, valor_in, resultado: str
+        """
         entrada = self.boxEntrada.currentText()
         saida = self.boxSaida.currentText()
         valor_in = self.lineValorIn.text()
         resultado = Calcula.calcular(entrada, saida, valor_in)
         self.lineResultado.setText(resultado)
-        
-      
-        
 
-        # valor_in = self.lineValorIn.text()
-        # valida = Validador()
-        # teste = valida.valida(valor_in)
-
-        # if teste:
-        #     box_in = self.boxEntrada.currentText()
-        #     box_out = self.boxSaida.currentText()
-        #     calc = Calcula()
-        #     tipo = valida.tipo(box_in, box_out)
-        #     resultado = calc.calcular(tipo, valor_in)
-        #     self.lineResultado.setText(resultado)
-
-
-        # else:
-        #     self.lineResultado.setText('Você precisa digitar um valor.')
-
-    
 
 if __name__ == '__main__':
     qt = QApplication(sys.argv)
     conversor = Conversor()
     conversor.show()
     qt.exec_()
+    

@@ -1,3 +1,7 @@
+"""
+TODO: implementar api de cotação de moedas a função de conversão
+"""
+
 import json
 import requests
 

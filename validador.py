@@ -6,7 +6,8 @@ Módulo que comtem classe de validação e ajuste de dados
 class Validador:
     def valida(entrada, saida, valor_in):
         """
-        Valida as informações de entrada e saida, e retorna a operacao a ser executada
+        Valida as informações de entrada e saida, e retorna a operacao a ser
+        executada
 
         :param entrada, saida, valor_in: str
         :return: str, bool
@@ -24,14 +25,15 @@ class Validador:
         """
         try:
             float(valor_in)
-        except:
+        except ValueError as e:
             return False
         return True
 
     def ajuste(entrada, saida):
         """
-        Ajusta a entrada e saida em uma unica str usada para chamar a operacao de conversão
-        
+        Ajusta a entrada e saida em uma unica str usada para chamar a operacao
+        de conversão
+
         :param entrada, saida: str
         :return: str
         """

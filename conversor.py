@@ -7,9 +7,10 @@ from validador import Validador
 class Calcula:
     def calcular(entrada, saida, valor_in):
         """
-        Esta função inicia o processo de conversão, fazendo a chamada do validador,
+        Esta função inicia o processo de conversão, fazendo a chamada do
+        validador,
         e retornando o resultado da operação
-        
+
         :param entrada, saida, valor_in: str
         :return: str
         """
@@ -18,11 +19,11 @@ class Calcula:
             if operacao == ('MB_Mb' or 'KB_Kb'):
                 result = (float(valor_in)) * 8
                 return str(result)
-            
+
             if operacao == ('Kb_KB' or 'Mb_MB'):
                 result = (float(valor_in)) / 8
                 return str(result)
-            
+
             if operacao == 'Kb_MB':
                 result = (float(valor_in)) / 8000
                 return str(result)
@@ -30,7 +31,7 @@ class Calcula:
             if operacao == ('Kb_Mb' or 'KB_MB'):
                 result = (float(valor_in)) / 1000
                 return str(result)
-        
+
             if operacao == 'KB_Mb':
                 result = (float(valor_in)) / 125
                 return str(result)
@@ -46,5 +47,5 @@ class Calcula:
             if operacao == 'MB_Kb':
                 result = (float(valor_in)) * 8000
                 return str(result)
-            
+
         return 'Operação Invalida'
