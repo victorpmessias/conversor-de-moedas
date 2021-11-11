@@ -67,6 +67,8 @@ class Ui_MainWindow(object):
         self.menuTipo_de_dado.addAction(self.actionMoeda)
         self.menuTipo_de_dado.addAction(self.actionMetrico)
         self.menubar.addAction(self.menuTipo_de_dado.menuAction())
+        # Variavel de controle
+        self.currentActive = 'dado'
 
         self.retranslateUi(MainWindow)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
@@ -92,20 +94,22 @@ class Ui_MainWindow(object):
         self.actionMoeda.setText(_translate("MainWindow", "Moeda"))
         self.actionMetrico.setText(_translate("MainWindow", "Metrico"))
 
-    def altera_moedas(self):
+    def altera_dados(self):
         _translate = QtCore.QCoreApplication.translate
         # Alteração das informações de entrada
-        self.boxEntrada.setItemText(1, _translate("MainWindow", "R$"))
-        self.boxEntrada.setItemText(2, _translate("MainWindow", "ER"))
-        self.boxEntrada.setItemText(3, _translate("MainWindow", "$"))
-        self.boxEntrada.setItemText(4, _translate("MainWindow", "Libras"))
+        self.boxEntrada.setItemText(1, _translate("MainWindow", "MB"))
+        self.boxEntrada.setItemText(2, _translate("MainWindow", "Mb"))
+        self.boxEntrada.setItemText(3, _translate("MainWindow", "KB"))
+        self.boxEntrada.setItemText(4, _translate("MainWindow", "Kb"))
         # Alteração das informações de saida
-        self.boxSaida.setItemText(1, _translate("MainWindow", "R$"))
-        self.boxSaida.setItemText(2, _translate("MainWindow", "ER"))
-        self.boxSaida.setItemText(3, _translate("MainWindow", "$"))
-        self.boxSaida.setItemText(4, _translate("MainWindow", "Libras"))
+        self.boxSaida.setItemText(1, _translate("MainWindow", "MB"))
+        self.boxSaida.setItemText(2, _translate("MainWindow", "Mb"))
+        self.boxSaida.setItemText(3, _translate("MainWindow", "KB"))
+        self.boxSaida.setItemText(4, _translate("MainWindow", "Kb"))
+        # Variavel de controle
+        self.currentActive = 'dado'
 
-    def altera_dados(self):
+    def altera_moedas(self):
         _translate = QtCore.QCoreApplication.translate
         # Alteração das informações de entrada
         self.boxSaida.setItemText(1, _translate("MainWindow", "BRL"))
@@ -117,7 +121,20 @@ class Ui_MainWindow(object):
         self.boxEntrada.setItemText(2, _translate("MainWindow", "USD"))
         self.boxEntrada.setItemText(3, _translate("MainWindow", "JPY"))
         self.boxEntrada.setItemText(4, _translate("MainWindow", "EUR"))
+        # Variavel de controle
+        self.currentActive = 'moeda'
 
     def altera_metrico(self):
-        # TODO: implent method to convert measures
-        pass
+        _translate = QtCore.QCoreApplication.translate
+        # Alteração das informações de entrada
+        self.boxSaida.setItemText(1, _translate("MainWindow", "KM"))
+        self.boxSaida.setItemText(2, _translate("MainWindow", "Jardas"))
+        self.boxSaida.setItemText(3, _translate("MainWindow", "Polegadas"))
+        self.boxSaida.setItemText(4, _translate("MainWindow", "Pés"))
+        # Alteração das informações de entrada
+        self.boxEntrada.setItemText(1, _translate("MainWindow", "KM"))
+        self.boxEntrada.setItemText(2, _translate("MainWindow", "Jardas"))
+        self.boxEntrada.setItemText(3, _translate("MainWindow", "Polegadas"))
+        self.boxEntrada.setItemText(4, _translate("MainWindow", "Pés"))
+        # Variavel de controle
+        self.currentActive = 'metrico'

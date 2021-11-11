@@ -1,14 +1,20 @@
 """
-TODO: implementar api de cotação de moedas a função de conversão
+Api responsavel por coletar a cotação de moedas
 """
 
 import json
 import requests
+import re
 
 
-requisicao = requests.get(" https://economia.awesomeapi.com.br/last/USD-JPY")
-cotacao = requisicao.json()
-print(cotacao['USDJPY']['code'])
-result = float(cotacao['USDJPY']['ask'])
+class Cotacao:
+    def get_cotacao(self, operacao):
+        oper_ajuste = re.sub('[_]', '-', operacao)
+        get = re.sub('[-]', '', oper_ajuste)
+        requisicao = requests.get(f'https://economia.awesomeapi.com.br/last/{oper_ajuste}/')
+        cotacao = requisicao.json()
+        result = float(cotacao[f'{get}']['ask'])
+        return result
 
-print(48.9*result)
+
+
