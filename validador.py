@@ -1,67 +1,38 @@
+"""
+Módulo que comtem classe de validação e ajuste de dados
+"""
+
+
 class Validador:
-    def valida(self, valor):
-        if valor != '':
-            return True
+    def valida(entrada, saida, valor_in):
+        """
+        Valida as informações de entrada e saida, e retorna a operacao a ser executada
 
-    def tipo(self, valor_in, valor_out):
-        r = 1
-        if valor_in == 'MB':
-            if valor_out == 'Mb':
-                r += 2
-                return r
-            elif valor_out == 'KB': 
-                r += 3
-                return r 
-            elif valor_out == 'Kb':
-                r += 4
-                return r
-            elif valor_out == 'MB':
-                r += 1
-                return r
+        :param entrada, saida, valor_in: str
+        :return: str, bool
+        """
+        if (entrada != saida) and Validador.teste_integridade(valor_in):
+            return Validador.ajuste(entrada, saida)
+        return False
 
-        if valor_in == 'Mb':
-            if valor_out == 'MB':
-                r += 5
-                return r
-            elif valor_out == 'KB':
-                r += 6
-                return r
-            elif valor_out == 'Kb':
-                r += 7
-                return r
-            elif valor_out == 'Mb':
-                r += 8
-                return r
+    def teste_integridade(valor_in):
+        """
+        Testa o tipo do valor que foi digitado para evitar erro de tipo
 
-        if valor_in == 'KB':
-            if valor_out == 'Mb':
-                r += 16
-                return r
-            elif valor_out == 'MB':
-                r += 9
-                return r
-            elif valor_out == 'Kb':
-                r += 10
-                return r
-            elif valor_out == 'KB':
-                r += 11
-                return r
+        :param valor_in: str
+        :return: bool
+        """
+        try:
+            float(valor_in)
+        except:
+            return False
+        return True
 
-        if valor_in == 'Kb':
-            if valor_out == 'Mb':
-                r += 12
-                return r
-            elif valor_out == 'KB':
-                r += 13
-                return r
-            elif valor_out == 'MB':
-                r += 14
-                return r
-            elif valor_out == 'Kb':
-                r += 15
-                return r
-
-        return r
-
-
-
+    def ajuste(entrada, saida):
+        """
+        Ajusta a entrada e saida em uma unica str usada para chamar a operacao de conversão
+        
+        :param entrada, saida: str
+        :return: str
+        """
+        return f'{entrada}_{saida}'

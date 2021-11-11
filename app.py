@@ -6,10 +6,7 @@ Módulo principal do conversor
 import sys
 from PyQt5.QtWidgets import QApplication, QMainWindow, QMenu, QAction
 from design import Ui_MainWindow
-from caulc import Calcula
-from validador import Validador
-from valida_new import Tipo_Operacao, Validador
-from caulc_new import Calcula
+from conversor import Calcula
 
 
 class Conversor(QMainWindow, Ui_MainWindow, QMenu):
@@ -25,14 +22,11 @@ class Conversor(QMainWindow, Ui_MainWindow, QMenu):
         self.convert()
 
     def convert(self):
-        valor1 = self.boxEntrada.currentText()
-        valor2 = self.boxSaida.currentText()
-        valor3 = self.lineValorIn.text()
-        r = Validador.valida(valor1, valor2)
-        p = str(Validador.teste(r))
-        s = Calcula.calcular(p, valor3)
-        self.lineResultado.setText(s)
-        
+        entrada = self.boxEntrada.currentText()
+        saida = self.boxSaida.currentText()
+        valor_in = self.lineValorIn.text()
+        resultado = Calcula.calcular(entrada, saida, valor_in)
+        self.lineResultado.setText(resultado)
         
       
         
