@@ -4,18 +4,20 @@ Módulo que comtem classe de validação e ajuste de dados
 
 
 class Validador:
+    @staticmethod
     def valida(entrada, saida, valor_in):
         """
         Valida as informações de entrada e saida, e retorna a operacao a ser
         executada
 
-        :param entrada, saida, valor_in: str
+        :param: entrada, saida, valor_in: str
         :return: str, bool
         """
         if (entrada != saida) and Validador.teste_integridade(valor_in):
             return Validador.ajuste(entrada, saida)
         return False
 
+    @staticmethod
     def teste_integridade(valor_in):
         """
         Testa o tipo do valor que foi digitado para evitar erro de tipo
@@ -28,13 +30,13 @@ class Validador:
         except ValueError as e:
             return False
         return True
-
+    @staticmethod
     def ajuste(entrada, saida):
         """
         Ajusta a entrada e saida em uma unica str usada para chamar a operacao
         de conversão
 
-        :param entrada, saida: str
+        :param: entrada, saida: str
         :return: str
         """
         return f'{entrada}_{saida}'

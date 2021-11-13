@@ -2,29 +2,28 @@
 Módulo que contém a classe responsavel por executar as operações de conversão.
 """
 from validador import Validador
-from abc import ABC, abstractclassmethod
+from abc import ABC, abstractmethod
 from api_cotacao import Cotacao
-
+from api_metrico import Metrico
 
 class Convert(ABC):
-    def valida(self, entrada, saida, valor_in):
+    def valida(self, entrada: str, saida: str, valor_in: str):
         operacao = Validador.valida(entrada, saida, valor_in)
         return operacao
 
-
-    @abstractclassmethod
-    def calcular(self, entrada, saida, valor_in):
+    @abstractmethod
+    def calcular(self, entrada: str, saida: str, valor_in: str):
         pass
 
 
-class Convert_dado(Convert):
-    def calcular(self, entrada, saida, valor_in):
+class ConvertDado(Convert):
+    def calcular(self, entrada: str, saida: str, valor_in: str):
         """
         Esta função inicia o processo de conversão, fazendo a chamada do
         validador,
         e retornando o resultado da operação
 
-        :param entrada, saida, valor_in: str
+        :param: entrada, saida, valor_in: str
         :return: str
         """
         operacao = self.valida(entrada, saida, valor_in)
@@ -64,20 +63,27 @@ class Convert_dado(Convert):
         return 'Operação Invalida'
 
 
-class Convert_moeda(Convert):
-    def calcular(self, entrada, saida, valor_in):
+class ConvertMoeda(Convert):
+    def calcular(self, entrada: str, saida: str, valor_in: str):
         """
         Esta função inicia o processo de conversão, fazendo a chamada do
-        validador,
-        e retornando o resultado da operação
+        validador,me retornando o resultado da operação.
 
-        :param entrada, saida, valor_in: str
+        :param: entrada, saida, valor_in: str
         :return: str
         """
         operacao = self.valida(entrada, saida, valor_in)
         if operacao:
-            cotacao = Cotacao()
-            cotacao_on = cotacao.get_cotacao(operacao)
+            cotacao_on = Cotacao.get_cotacao(operacao)
             result = (float(valor_in)) * cotacao_on
+            return str(result)
+        return 'Operação Invalida'
+
+
+class ConvertMetrico(Convert):
+    def calcular(self, entrada: str, saida: str, valor_in: str):
+        operacao = self.valida(entrada, saida, valor_in)
+        if operacao:
+            result = Metrico.calcular(operacao, valor_in)
             return str(result)
         return 'Operação Invalida'

@@ -14,7 +14,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(348, 189)
+        MainWindow.resize(394, 160)
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
         self.gridLayout = QtWidgets.QGridLayout(self.centralwidget)
@@ -26,22 +26,10 @@ class Ui_MainWindow(object):
         self.boxSaida.addItem("")
         self.boxSaida.addItem("")
         self.boxSaida.addItem("")
-        self.gridLayout.addWidget(self.boxSaida, 1, 0, 1, 1)
-        self.btnInverter = QtWidgets.QPushButton(self.centralwidget)
-        self.btnInverter.setObjectName("btnInverter")
-        self.gridLayout.addWidget(self.btnInverter, 1, 1, 1, 1)
-        self.lineValorIn = QtWidgets.QLineEdit(self.centralwidget)
-        self.lineValorIn.setText("")
-        self.lineValorIn.setObjectName("lineValorIn")
-        self.gridLayout.addWidget(self.lineValorIn, 2, 0, 1, 1)
+        self.gridLayout.addWidget(self.boxSaida, 3, 0, 1, 2)
         self.btnConvert = QtWidgets.QPushButton(self.centralwidget)
         self.btnConvert.setObjectName("btnConvert")
-        self.gridLayout.addWidget(self.btnConvert, 2, 1, 1, 1)
-        self.lineResultado = QtWidgets.QLineEdit(self.centralwidget)
-        self.lineResultado.setText("")
-        self.lineResultado.setReadOnly(True)
-        self.lineResultado.setObjectName("lineResultado")
-        self.gridLayout.addWidget(self.lineResultado, 3, 0, 1, 1)
+        self.gridLayout.addWidget(self.btnConvert, 6, 1, 1, 1)
         self.boxEntrada = QtWidgets.QComboBox(self.centralwidget)
         self.boxEntrada.setObjectName("boxEntrada")
         self.boxEntrada.addItem("")
@@ -49,10 +37,19 @@ class Ui_MainWindow(object):
         self.boxEntrada.addItem("")
         self.boxEntrada.addItem("")
         self.boxEntrada.addItem("")
-        self.gridLayout.addWidget(self.boxEntrada, 0, 0, 1, 2)
+        self.gridLayout.addWidget(self.boxEntrada, 1, 0, 1, 2)
+        self.lineValorIn = QtWidgets.QLineEdit(self.centralwidget)
+        self.lineValorIn.setText("")
+        self.lineValorIn.setObjectName("lineValorIn")
+        self.gridLayout.addWidget(self.lineValorIn, 6, 0, 1, 1)
+        self.lineResultado = QtWidgets.QLineEdit(self.centralwidget)
+        self.lineResultado.setText("")
+        self.lineResultado.setReadOnly(True)
+        self.lineResultado.setObjectName("lineResultado")
+        self.gridLayout.addWidget(self.lineResultado, 7, 0, 1, 1)
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(MainWindow)
-        self.menubar.setGeometry(QtCore.QRect(0, 0, 348, 21))
+        self.menubar.setGeometry(QtCore.QRect(0, 0, 394, 21))
         self.menubar.setObjectName("menubar")
         self.menuTipo_de_dado = QtWidgets.QMenu(self.menubar)
         self.menuTipo_de_dado.setObjectName("menuTipo_de_dado")
@@ -70,6 +67,7 @@ class Ui_MainWindow(object):
         self.menuTipo_de_dado.addAction(self.actionMoeda)
         self.menuTipo_de_dado.addAction(self.actionMetrico)
         self.menubar.addAction(self.menuTipo_de_dado.menuAction())
+        # Variavel de controle
         self.currentActive = 'dado'
 
         self.retranslateUi(MainWindow)
@@ -83,20 +81,19 @@ class Ui_MainWindow(object):
         self.boxSaida.setItemText(2, _translate("MainWindow", "Mb"))
         self.boxSaida.setItemText(3, _translate("MainWindow", "KB"))
         self.boxSaida.setItemText(4, _translate("MainWindow", "Kb"))
-        self.btnInverter.setText(_translate("MainWindow", "Inverter"))
-        self.lineValorIn.setPlaceholderText(_translate("MainWindow", "Insira um valor"))
         self.btnConvert.setText(_translate("MainWindow", "Converter"))
-        self.lineResultado.setPlaceholderText(_translate("MainWindow", "Resultado"))
         self.boxEntrada.setItemText(0, _translate("MainWindow", "Escolha o tipo de entrada"))
         self.boxEntrada.setItemText(1, _translate("MainWindow", "MB"))
         self.boxEntrada.setItemText(2, _translate("MainWindow", "Mb"))
         self.boxEntrada.setItemText(3, _translate("MainWindow", "KB"))
         self.boxEntrada.setItemText(4, _translate("MainWindow", "Kb"))
+        self.lineValorIn.setPlaceholderText(_translate("MainWindow", "Insira um valor"))
+        self.lineResultado.setPlaceholderText(_translate("MainWindow", "Resultado"))
         self.menuTipo_de_dado.setTitle(_translate("MainWindow", "Tipo de dado"))
         self.actionDados_de_arm.setText(_translate("MainWindow", "Dados de arm."))
         self.actionMoeda.setText(_translate("MainWindow", "Moeda"))
         self.actionMetrico.setText(_translate("MainWindow", "Metrico"))
-
+    
     def altera_dados(self):
         _translate = QtCore.QCoreApplication.translate
         # Alteração das informações de entrada
@@ -133,17 +130,11 @@ class Ui_MainWindow(object):
         self.boxSaida.setItemText(1, _translate("MainWindow", "KM"))
         self.boxSaida.setItemText(2, _translate("MainWindow", "Jardas"))
         self.boxSaida.setItemText(3, _translate("MainWindow", "Polegadas"))
-        self.boxSaida.setItemText(4, _translate("MainWindow", "Pes"))
+        self.boxSaida.setItemText(4, _translate("MainWindow", "Pés"))
         # Alteração das informações de entrada
         self.boxEntrada.setItemText(1, _translate("MainWindow", "KM"))
         self.boxEntrada.setItemText(2, _translate("MainWindow", "Jardas"))
         self.boxEntrada.setItemText(3, _translate("MainWindow", "Polegadas"))
-        self.boxEntrada.setItemText(4, _translate("MainWindow", "Pes"))
+        self.boxEntrada.setItemText(4, _translate("MainWindow", "Pés"))
         # Variavel de controle
         self.currentActive = 'metrico'
-
-    def inverter(self):
-        anterio = self.boxEntrada.currentActive
-        novo = self.boxSaida.currentActive
-        self.boxEntrada.setActive(novo)
-        self.boxSaida.setActive(anterio)
