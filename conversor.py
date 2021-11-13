@@ -28,11 +28,11 @@ class ConvertDado(Convert):
         """
         operacao = self.valida(entrada, saida, valor_in)
         if operacao:
-            if operacao == ('MB_Mb' or 'KB_Kb'):
+            if operacao == ('MB_Mb') or ('KB_Kb'):
                 result = (float(valor_in)) * 8
                 return f'{str(result)} {saida}'
 
-            if operacao == ('Kb_KB' or 'Mb_MB'):
+            if operacao == ('Kb_KB') or ('Mb_MB'):
                 result = (float(valor_in)) / 8
                 return f'{str(result)} {saida}'
 
@@ -40,7 +40,7 @@ class ConvertDado(Convert):
                 result = (float(valor_in)) / 8000
                 return f'{str(result)} {saida}'
 
-            if operacao == ('Kb_Mb' or 'KB_MB'):
+            if operacao == ('Kb_Mb') or ('KB_MB'):
                 result = (float(valor_in)) / 1000
                 return f'{str(result)} {saida}'
 
@@ -52,7 +52,7 @@ class ConvertDado(Convert):
                 result = (float(valor_in)) * 125
                 return f'{str(result)} {saida}'
 
-            if operacao == ('MB_KB' or 'Mb_Kb'):
+            if operacao == ('MB_KB') or ('Mb_Kb'):
                 result = (float(valor_in)) * 1000
                 return f'{str(result)} {saida}'
 

@@ -16,18 +16,26 @@ from PyQt5.QtWidgets import QGraphicsDropShadowEffect
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Fixed)
+        sizePolicy = QtWidgets.QSizePolicy(
+            QtWidgets.QSizePolicy.Fixed,
+            QtWidgets.QSizePolicy.Fixed
+            )
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(MainWindow.sizePolicy().hasHeightForWidth())
+        sizePolicy.setHeightForWidth(
+            MainWindow.sizePolicy().hasHeightForWidth()
+            )
         MainWindow.setFixedSize(310, 240)
         MainWindow.setSizePolicy(sizePolicy)
-        icon = QtGui.QIcon.fromTheme("C:\\Python\\Curso_Python\\PYQT_Aulas\\imgs\\outline_calculate_black_24dp.png")
+        icon = QtGui.QIcon.fromTheme(
+            "C:\\Python\\Curso_Python\\PYQT_Aulas\\imgs\\\
+                outline_calculate_black_24dp.png")
         MainWindow.setWindowIcon(icon)
         # MainWindow.setStyleSheet('background-color: #494C51; color: #FFFFFF')
         MainWindow.setToolButtonStyle(QtCore.Qt.ToolButtonFollowStyle)
         self.centralwidget = QtWidgets.QWidget(MainWindow)
-        self.centralwidget.setStyleSheet( 'background-color: #353A40; color: white')
+        self.centralwidget.setStyleSheet('background-color: #353A40;\
+        color: white')
         self.centralwidget.setObjectName("centralwidget")
         self.boxSaida = QtWidgets.QComboBox(self.centralwidget)
         self.boxSaida.setGeometry(QtCore.QRect(10, 80, 281, 18))
@@ -137,40 +145,41 @@ class Ui_MainWindow(object):
         self.currentActive = 'dado'
         self.retranslateUi(MainWindow)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
-        
+
         for child in self.findChildren(QtWidgets.QWidget):
             effect = QGraphicsDropShadowEffect(
                 offset=QPoint(0, 3), blurRadius=3, color=QColor("#2C3137")
             )
             child.setGraphicsEffect(effect)
-        
-
-            
-
-
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
-        MainWindow.setWindowTitle(_translate("MainWindow", "Conversor de medidas"))
-        self.boxSaida.setItemText(0, _translate("MainWindow", "Escolha o tipo de saida"))
+        MainWindow.setWindowTitle(_translate(
+            "MainWindow", "Conversor de medidas"))
+        self.boxSaida.setItemText(0, _translate(
+            "MainWindow", "Escolha o tipo de saida"))
         self.boxSaida.setItemText(1, _translate("MainWindow", "MB"))
         self.boxSaida.setItemText(2, _translate("MainWindow", "Mb"))
         self.boxSaida.setItemText(3, _translate("MainWindow", "KB"))
         self.boxSaida.setItemText(4, _translate("MainWindow", "Kb"))
-        self.lineValorIn.setPlaceholderText(_translate("MainWindow", "Insira um valor"))
+        self.lineValorIn.setPlaceholderText(_translate(
+            "MainWindow", "Insira um valor"))
         self.btnConvert.setText(_translate("MainWindow", "CONVERTER"))
-        self.boxEntrada.setItemText(0, _translate("MainWindow", "Escolha o tipo de entrada"))
+        self.boxEntrada.setItemText(0, _translate(
+            "MainWindow", "Escolha o tipo de entrada"))
         self.boxEntrada.setItemText(1, _translate("MainWindow", "MB"))
         self.boxEntrada.setItemText(2, _translate("MainWindow", "Mb"))
         self.boxEntrada.setItemText(3, _translate("MainWindow", "KB"))
         self.boxEntrada.setItemText(4, _translate("MainWindow", "Kb"))
-        self.lineResultado.setPlaceholderText(_translate("MainWindow", "Resultado"))
-        self.menuTipo_de_dado.setTitle(_translate("MainWindow", "Tipo de dado"))
-        self.actionDados_de_arm.setText(_translate("MainWindow", "Dados de arm."))
+        self.lineResultado.setPlaceholderText(_translate(
+            "MainWindow", "Resultado"))
+        self.menuTipo_de_dado.setTitle(_translate(
+            "MainWindow", "Tipo de dado"))
+        self.actionDados_de_arm.setText(_translate(
+            "MainWindow", "Dados de arm."))
         self.actionMoeda.setText(_translate("MainWindow", "Moeda"))
         self.actionMetrico.setText(_translate("MainWindow", "Metrico"))
         self.label.setText(_translate("MainWindow", "CONVERTER DADOS"))
-
 
     def altera_dados(self):
         _translate = QtCore.QCoreApplication.translate
@@ -187,7 +196,7 @@ class Ui_MainWindow(object):
         # Variavel de controle
         self.currentActive = 'dado'
         self.label.setText(_translate("MainWindow", "CONVERTER DADOS"))
-   
+
     def altera_moedas(self):
         _translate = QtCore.QCoreApplication.translate
         # Alteração das informações de entrada
@@ -203,7 +212,7 @@ class Ui_MainWindow(object):
         # Variavel de controle
         self.currentActive = 'moeda'
         self.label.setText(_translate("MainWindow", "CONVERTER MOEDAS"))
-   
+
     def altera_metrico(self):
         _translate = QtCore.QCoreApplication.translate
         # Alteração das informações de entrada
