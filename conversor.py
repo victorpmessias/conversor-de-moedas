@@ -67,7 +67,7 @@ class ConvertMoeda(Convert):
     def calcular(self, entrada: str, saida: str, valor_in: str):
         """
         Esta função inicia o processo de conversão, fazendo a chamada do
-        validador,me retornando o resultado da operação.
+        validador,e retornando o resultado da operação.
 
         :param: entrada, saida, valor_in: str
         :return: str
@@ -81,6 +81,13 @@ class ConvertMoeda(Convert):
 
 
 class ConvertMetrico(Convert):
+        """
+        Esta função inicia o processo de conversão, fazendo a chamada do
+        validador,e retornando o resultado da operação.
+
+        :param: entrada, saida, valor_in: str
+        :return: str
+        """
     def calcular(self, entrada: str, saida: str, valor_in: str):
         operacao = self.valida(entrada, saida, valor_in)
         if operacao:

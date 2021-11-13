@@ -6,125 +6,219 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>348</width>
-    <height>189</height>
+    <width>300</width>
+    <height>200</height>
    </rect>
   </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>Conversor de medidas</string>
+  </property>
+  <property name="windowIcon">
+   <iconset theme="C:\Python\Curso_Python\PYQT_Aulas\imgs\outline_calculate_black_24dp.png">
+    <normaloff>../../imgs/outline_calculate_black_24dp.png</normaloff>../../imgs/outline_calculate_black_24dp.png</iconset>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: #494C51;</string>
+  </property>
+  <property name="toolButtonStyle">
+   <enum>Qt::ToolButtonFollowStyle</enum>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <layout class="QGridLayout" name="gridLayout">
-    <item row="1" column="0">
-     <widget class="QComboBox" name="boxSaida">
-      <item>
-       <property name="text">
-        <string>Escolha o tipo de saida</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>MB</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>Mb</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>KB</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>Kb</string>
-       </property>
-      </item>
-     </widget>
+   <property name="styleSheet">
+    <string notr="true">background-color: #353A40;</string>
+   </property>
+   <widget class="QComboBox" name="boxSaida">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>40</y>
+      <width>281</width>
+      <height>18</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Lato</family>
+      <pointsize>10</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: white;</string>
+    </property>
+    <item>
+     <property name="text">
+      <string>Escolha o tipo de saida</string>
+     </property>
     </item>
-    <item row="1" column="1">
-     <widget class="QPushButton" name="btnInverter">
-      <property name="text">
-       <string>Inverter</string>
-      </property>
-     </widget>
+    <item>
+     <property name="text">
+      <string>MB</string>
+     </property>
     </item>
-    <item row="2" column="0">
-     <widget class="QLineEdit" name="lineValorIn">
-      <property name="text">
-       <string/>
-      </property>
-      <property name="placeholderText">
-       <string>Insira um valor</string>
-      </property>
-     </widget>
+    <item>
+     <property name="text">
+      <string>Mb</string>
+     </property>
     </item>
-    <item row="2" column="1">
-     <widget class="QPushButton" name="btnConvert">
-      <property name="text">
-       <string>Converter</string>
-      </property>
-     </widget>
+    <item>
+     <property name="text">
+      <string>KB</string>
+     </property>
     </item>
-    <item row="3" column="0">
-     <widget class="QLineEdit" name="lineResultado">
-      <property name="text">
-       <string/>
-      </property>
-      <property name="readOnly">
-       <bool>true</bool>
-      </property>
-      <property name="placeholderText">
-       <string>Resultado</string>
-      </property>
-     </widget>
+    <item>
+     <property name="text">
+      <string>Kb</string>
+     </property>
     </item>
-    <item row="0" column="0" colspan="2">
-     <widget class="QComboBox" name="boxEntrada">
-      <property name="styleSheet">
-       <string notr="true">#color red</string>
-      </property>
-      <item>
-       <property name="text">
-        <string>Escolha o tipo de entrada</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>MB</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>Mb</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>KB</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>Kb</string>
-       </property>
-      </item>
-     </widget>
+   </widget>
+   <widget class="QLineEdit" name="lineValorIn">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>80</y>
+      <width>191</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Lato</family>
+      <pointsize>10</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: white;</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="placeholderText">
+     <string>Insira um valor</string>
+    </property>
+    <property name="cursorMoveStyle">
+     <enum>Qt::VisualMoveStyle</enum>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btnConvert">
+    <property name="geometry">
+     <rect>
+      <x>210</x>
+      <y>80</y>
+      <width>81</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Lato Black</family>
+      <pointsize>8</pointsize>
+      <italic>false</italic>
+      <underline>false</underline>
+      <strikeout>false</strikeout>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: #0083F9; color: white</string>
+    </property>
+    <property name="text">
+     <string>CONVERTER</string>
+    </property>
+   </widget>
+   <widget class="QComboBox" name="boxEntrada">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>10</y>
+      <width>281</width>
+      <height>18</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Lato</family>
+      <pointsize>10</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: white; color: red;</string>
+    </property>
+    <item>
+     <property name="text">
+      <string>Escolha o tipo de entrada</string>
+     </property>
     </item>
-   </layout>
+    <item>
+     <property name="text">
+      <string>MB</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Mb</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>KB</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Kb</string>
+     </property>
+    </item>
+   </widget>
+   <widget class="QLineEdit" name="lineResultado">
+    <property name="geometry">
+     <rect>
+      <x>9</x>
+      <y>118</y>
+      <width>281</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Lato</family>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: white;</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="readOnly">
+     <bool>true</bool>
+    </property>
+    <property name="placeholderText">
+     <string>Resultado</string>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>348</width>
+     <width>300</width>
      <height>21</height>
     </rect>
    </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: #494C51; color: white;</string>
+   </property>
    <widget class="QMenu" name="menuTipo_de_dado">
+    <property name="styleSheet">
+     <string notr="true">background-color: gray; color: white;</string>
+    </property>
     <property name="title">
      <string>Tipo de dado</string>
     </property>

@@ -15,14 +15,11 @@ class Conversor(QMainWindow, Ui_MainWindow, QMenu):
         self.actionDados_de_arm.triggered.connect(self.altera_dados)
         self.actionMoeda.triggered.connect(self.altera_moedas)
         self.actionMetrico.triggered.connect(self.altera_metrico)
-        self.btnInverter.clicked.connect(self.inverter)
 
     def convert(self):
         """
-        Quando acioanda esta função captura os dados e executa a operação de
+        Quando acionada esta função captura os dados e executa a operação de
         conversão
-
-        :var entrada, saida, valor_in, resultado: str
         """
         entrada = self.boxEntrada.currentText()
         saida = self.boxSaida.currentText()
@@ -39,7 +36,6 @@ class Conversor(QMainWindow, Ui_MainWindow, QMenu):
             exec = ConvertMoeda()
             resultado = exec.calcular(entrada, saida, valor_in)
             self.lineResultado.setText(resultado)
-
 
 if __name__ == '__main__':
     qt = QApplication(sys.argv)
