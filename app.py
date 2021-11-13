@@ -18,7 +18,7 @@ class Conversor(QMainWindow, Ui_MainWindow, QMenu):
 
     def convert(self):
         """
-        Quando acionada esta função captura os dados e executa a operação de
+        Quando acioanda esta função captura os dados e executa a operação de
         conversão
         """
         entrada = self.boxEntrada.currentText()
@@ -28,14 +28,17 @@ class Conversor(QMainWindow, Ui_MainWindow, QMenu):
             exec = ConvertDado()
             resultado = exec.calcular(entrada, saida, valor_in)
             self.lineResultado.setText(resultado)
+
         if self.currentActive == 'metrico':
             exec = ConvertMetrico()
             resultado = exec.calcular(entrada, saida, valor_in)
             self.lineResultado.setText(resultado)
+
         if self.currentActive == 'moeda':
             exec = ConvertMoeda()
             resultado = exec.calcular(entrada, saida, valor_in)
             self.lineResultado.setText(resultado)
+
 
 if __name__ == '__main__':
     qt = QApplication(sys.argv)

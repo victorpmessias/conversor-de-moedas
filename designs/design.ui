@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>300</width>
-    <height>200</height>
+    <width>310</width>
+    <height>236</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -15,6 +15,24 @@
     <horstretch>0</horstretch>
     <verstretch>0</verstretch>
    </sizepolicy>
+  </property>
+  <property name="font">
+   <font>
+    <family>Roboto Medium</family>
+    <pointsize>20</pointsize>
+   </font>
+  </property>
+  <property name="cursor">
+   <cursorShape>ArrowCursor</cursorShape>
+  </property>
+  <property name="mouseTracking">
+   <bool>false</bool>
+  </property>
+  <property name="tabletTracking">
+   <bool>false</bool>
+  </property>
+  <property name="contextMenuPolicy">
+   <enum>Qt::NoContextMenu</enum>
   </property>
   <property name="windowTitle">
    <string>Conversor de medidas</string>
@@ -24,12 +42,24 @@
     <normaloff>../../imgs/outline_calculate_black_24dp.png</normaloff>../../imgs/outline_calculate_black_24dp.png</iconset>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-color: #494C51;</string>
+   <string notr="true"/>
+  </property>
+  <property name="inputMethodHints">
+   <set>Qt::ImhNone</set>
   </property>
   <property name="toolButtonStyle">
    <enum>Qt::ToolButtonFollowStyle</enum>
   </property>
+  <property name="animated">
+   <bool>true</bool>
+  </property>
   <widget class="QWidget" name="centralwidget">
+   <property name="font">
+    <font>
+     <family>Roboto</family>
+     <pointsize>8</pointsize>
+    </font>
+   </property>
    <property name="styleSheet">
     <string notr="true">background-color: #353A40;</string>
    </property>
@@ -37,7 +67,7 @@
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>40</y>
+      <y>80</y>
       <width>281</width>
       <height>18</height>
      </rect>
@@ -48,8 +78,23 @@
       <pointsize>10</pointsize>
      </font>
     </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
     <property name="styleSheet">
      <string notr="true">background-color: white;</string>
+    </property>
+    <property name="inputMethodHints">
+     <set>Qt::ImhUppercaseOnly</set>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>80</width>
+      <height>80</height>
+     </size>
+    </property>
+    <property name="frame">
+     <bool>false</bool>
     </property>
     <item>
      <property name="text">
@@ -81,7 +126,7 @@
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>80</y>
+      <y>120</y>
       <width>191</width>
       <height>20</height>
      </rect>
@@ -94,6 +139,9 @@
     </property>
     <property name="styleSheet">
      <string notr="true">background-color: white;</string>
+    </property>
+    <property name="inputMethodHints">
+     <set>Qt::ImhNone</set>
     </property>
     <property name="text">
      <string/>
@@ -109,7 +157,7 @@
     <property name="geometry">
      <rect>
       <x>210</x>
-      <y>80</y>
+      <y>120</y>
       <width>81</width>
       <height>23</height>
      </rect>
@@ -134,7 +182,7 @@
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>10</y>
+      <y>40</y>
       <width>281</width>
       <height>18</height>
      </rect>
@@ -144,6 +192,9 @@
       <family>Lato</family>
       <pointsize>10</pointsize>
      </font>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
     </property>
     <property name="styleSheet">
      <string notr="true">background-color: white; color: red;</string>
@@ -177,8 +228,8 @@
    <widget class="QLineEdit" name="lineResultado">
     <property name="geometry">
      <rect>
-      <x>9</x>
-      <y>118</y>
+      <x>10</x>
+      <y>160</y>
       <width>281</width>
       <height>31</height>
      </rect>
@@ -187,13 +238,23 @@
      <font>
       <family>Lato</family>
       <pointsize>12</pointsize>
+      <kerning>false</kerning>
      </font>
     </property>
+    <property name="mouseTracking">
+     <bool>false</bool>
+    </property>
+    <property name="acceptDrops">
+     <bool>false</bool>
+    </property>
     <property name="styleSheet">
-     <string notr="true">background-color: white;</string>
+     <string notr="true">background-color: #212429; color: #F8F9FB; </string>
     </property>
     <property name="text">
-     <string/>
+     <string>80.0 Mb</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
     </property>
     <property name="readOnly">
      <bool>true</bool>
@@ -202,15 +263,49 @@
      <string>Resultado</string>
     </property>
    </widget>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>10</y>
+      <width>271</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Lato</family>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="layoutDirection">
+     <enum>Qt::LeftToRight</enum>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: #353A40; color: white;</string>
+    </property>
+    <property name="text">
+     <string>CONVERTER DADOS</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>300</width>
+     <width>310</width>
      <height>21</height>
     </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Roboto</family>
+     <pointsize>10</pointsize>
+    </font>
    </property>
    <property name="styleSheet">
     <string notr="true">background-color: #494C51; color: white;</string>
@@ -228,7 +323,6 @@
    </widget>
    <addaction name="menuTipo_de_dado"/>
   </widget>
-  <widget class="QStatusBar" name="statusbar"/>
   <action name="actionDados_de_arm">
    <property name="text">
     <string>Dados de arm.</string>

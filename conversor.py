@@ -30,36 +30,36 @@ class ConvertDado(Convert):
         if operacao:
             if operacao == ('MB_Mb' or 'KB_Kb'):
                 result = (float(valor_in)) * 8
-                return str(result)
+                return f'{str(result)} {saida}'
 
             if operacao == ('Kb_KB' or 'Mb_MB'):
                 result = (float(valor_in)) / 8
-                return str(result)
+                return f'{str(result)} {saida}'
 
             if operacao == 'Kb_MB':
                 result = (float(valor_in)) / 8000
-                return str(result)
+                return f'{str(result)} {saida}'
 
             if operacao == ('Kb_Mb' or 'KB_MB'):
                 result = (float(valor_in)) / 1000
-                return str(result)
+                return f'{str(result)} {saida}'
 
             if operacao == 'KB_Mb':
                 result = (float(valor_in)) / 125
-                return str(result)
+                return f'{str(result)} {saida}'
 
             if operacao == 'Mb_KB':
                 result = (float(valor_in)) * 125
-                return str(result)
+                return f'{str(result)} {saida}'
 
             if operacao == ('MB_KB' or 'Mb_Kb'):
                 result = (float(valor_in)) * 1000
-                return str(result)
+                return f'{str(result)} {saida}'
 
             if operacao == 'MB_Kb':
                 result = (float(valor_in)) * 8000
-                return str(result)
-
+                return f'{str(result)} {saida}'
+            
         return 'Operação Invalida'
 
 
@@ -76,7 +76,7 @@ class ConvertMoeda(Convert):
         if operacao:
             cotacao_on = Cotacao.get_cotacao(operacao)
             result = (float(valor_in)) * cotacao_on
-            return str(result)
+            return f'{str(result)} {saida}'
         return 'Operação Invalida'
 
 
@@ -92,5 +92,5 @@ class ConvertMetrico(Convert):
         operacao = self.valida(entrada, saida, valor_in)
         if operacao:
             result = Metrico.calcular(operacao, valor_in)
-            return str(result)
+            return f'{str(result)} {saida}'
         return 'Operação Invalida'
