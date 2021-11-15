@@ -150,7 +150,8 @@ class Ui_MainWindow(object):
             effect = QGraphicsDropShadowEffect(
                 offset=QPoint(0, 3), blurRadius=3, color=QColor("#2C3137")
             )
-            child.setGraphicsEffect(effect)
+            if 'QLabel' not in (type(child).__name__):
+                child.setGraphicsEffect(effect)
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
