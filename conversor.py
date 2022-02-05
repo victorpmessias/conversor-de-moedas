@@ -6,6 +6,7 @@ from abc import ABC, abstractmethod
 from api_cotacao import Cotacao
 from api_metrico import Metrico
 
+
 class Convert(ABC):
     def valida(self, entrada: str, saida: str, valor_in: str):
         operacao = Validador.valida(entrada, saida, valor_in)
@@ -59,7 +60,7 @@ class ConvertDado(Convert):
             if operacao == 'MB_Kb':
                 result = (float(valor_in)) * 8000
                 return f'{str(result)} {saida}'
-            
+
         return 'Operação Invalida'
 
 

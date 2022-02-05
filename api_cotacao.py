@@ -2,7 +2,7 @@
 Api responsável por coletar a cotação de moedas
 """
 
-import json
+# import json
 import requests
 import re
 

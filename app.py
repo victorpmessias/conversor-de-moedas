@@ -2,7 +2,7 @@
 Módulo principal do conversor
 """
 import sys
-from PyQt5.QtWidgets import QApplication, QMainWindow, QMenu, QAction
+from PyQt5.QtWidgets import QApplication, QMainWindow, QMenu
 from design import Ui_MainWindow
 from conversor import ConvertDado, ConvertMoeda, ConvertMetrico
 
@@ -18,7 +18,7 @@ class Conversor(QMainWindow, Ui_MainWindow, QMenu):
 
     def convert(self):
         """
-        Quando acioanda esta função captura os dados e executa a operação de
+        Quando acioanda esta função captura os dados e executa a operação de asiim
         conversão
         """
         entrada = self.boxEntrada.currentText()
